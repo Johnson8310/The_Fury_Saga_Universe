@@ -147,7 +147,101 @@ main{
   flex-direction: column;
   justify-content: center;
 }
+/* =========================
+   Fury Headlights: flicker → red ignite → living glow
+   ========================= */
 
+/* Make sure text stays above */
+.hero > *:not(.headlights){
+  position: relative;
+  z-index: 3;
+}
+
+/* Headlights overlay container */
+.headlights{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Individual light */
+.headlights .light{
+  position: absolute;
+
+  /* Tune these to match your hero-garage.jpg */
+  top: 66%;
+  width: 11%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+
+  /* Start "off" */
+  opacity: 0;
+  transform: scale(0.85);
+  filter: blur(2px);
+
+  /* Red supernatural core + soft falloff */
+  background:
+    radial-gradient(circle at 40% 40%,
+      rgba(255,230,235,0.95) 0%,
+      rgba(255,70,95,0.75) 18%,
+      rgba(177,18,38,0.70) 35%,
+      rgba(177,18,38,0.18) 62%,
+      rgba(0,0,0,0) 72%
+    );
+
+  /* Glow + bloom */
+  box-shadow:
+    0 0 14px rgba(255,70,95,0.50),
+    0 0 40px rgba(177,18,38,0.40),
+    0 0 90px rgba(177,18,38,0.25);
+
+  /* The sequence:
+     1) quick flicker (electrical)
+     2) red ignition ramp
+     3) subtle living pulse
+  */
+  animation:
+    furyFlicker 0.55s steps(1,end) 0.20s forwards,
+    furyIgnite 1.15s ease-out 0.75s forwards,
+    furyPulse 5.5s ease-in-out 2.1s infinite;
+}
+
+/* Left/Right placement */
+.headlights .left{ left: 18%; }
+.headlights .right{ right: 18%; }
+
+/* Electrical flicker: abrupt on/off + tiny jitters */
+@keyframes furyFlicker{
+  0%   { opacity: 0;   transform: scale(0.82); filter: blur(3px); }
+  12%  { opacity: 0.55; }
+  24%  { opacity: 0.10; transform: scale(0.86); }
+  36%  { opacity: 0.75; }
+  48%  { opacity: 0.18; }
+  60%  { opacity: 0.90; transform: scale(0.92); filter: blur(2px); }
+  75%  { opacity: 0.35; }
+  100% { opacity: 0.80; transform: scale(0.98); filter: blur(2px); }
+}
+
+/* Red ignition: smooth ramp to "fully awake" */
+@keyframes furyIgnite{
+  0%   { opacity: 0.80; transform: scale(0.98); }
+  45%  { opacity: 0.95; transform: scale(1.02); }
+  100% {
+    opacity: 1;
+    transform: scale(1.00);
+    box-shadow:
+      0 0 16px rgba(255,70,95,0.55),
+      0 0 52px rgba(177,18,38,0.52),
+      0 0 120px rgba(177,18,38,0.30);
+  }
+}
+
+/* Living pulse: slow breathing glow */
+@keyframes furyPulse{
+  0%, 100% { opacity: 0.92; filter: blur(2px); }
+  50%      { opacity: 1;    filter: blur(1.6px); }
+}
 .hero .kicker{
   text-transform: uppercase;
   font-size: 0.78rem;
