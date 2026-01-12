@@ -50,6 +50,10 @@ body::before {
 
   mix-blend-mode: overlay;
 }
+body > * {
+  position: relative;
+  z-index: 1;
+}
 a{ color: var(--link); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
