@@ -3,18 +3,30 @@ layout: default
 title: The Fury Saga Universe
 ---
 
-# THE FURY SAGA UNIVERSE
+<div class="hero">
+  <h1>THE FURY SAGA UNIVERSE</h1>
 
-**Prophecy can’t change. Evil never dies.**
+  <p><strong>Prophecy can’t change. Evil never dies.</strong></p>
 
-[Start with Book One](https://a.co/d/8Sbc78R)  
-[Buy on Barnes & Noble](https://www.barnesandnoble.com/w/book-one-jc-johnson/1149008244?ean=9798279602407)
+  <p>
+    A prophecy bound to blood and steel.<br>
+    A force that remembers every hand that shaped it.<br>
+    And a woman who inherits what should never have survived.
+  </p>
 
----
+  <p>
+    <a class="btn primary" href="https://a.co/d/8Sbc78R">Start with Book One</a>
+    <a class="btn" href="https://www.barnesandnoble.com/w/book-one-jc-johnson/1149008244?ean=9798279602407">
+      Buy on Barnes & Noble
+    </a>
+  </p>
+</div>
 
-A prophecy bound to blood and steel.  
-A force that remembers every hand that shaped it.  
-And a woman who inherits what should never have survived.
+<hr>
+
+## Join the Fury Dispatch
+
+Exclusive updates. Release alerts. Lore drops. No spam.
 
 ---
 
