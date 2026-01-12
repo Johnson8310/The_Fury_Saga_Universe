@@ -133,10 +133,16 @@ h2{
 
 p{ margin: 0.85rem 0; color: #e7eaf0; }
 
-hr{
+hr {
   border: none;
-  border-top: 1px solid var(--line);
-  margin: 1.5rem 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(177,18,38,0.45),
+    transparent
+  );
+  margin: 2rem 0;
 }
 
 .callouts{
