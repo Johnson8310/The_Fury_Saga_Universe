@@ -169,7 +169,6 @@ main{
 .headlights .light{
   position: absolute;
 
-  /* Tune these to match your hero-garage.jpg */
   top: 66%;
   width: 11%;
   aspect-ratio: 1 / 1;
@@ -185,9 +184,9 @@ main{
     radial-gradient(circle at 40% 40%,
       rgba(255,230,235,0.95) 0%,
       rgba(255,70,95,0.75) 18%,
-      rgba(177,18,38,0.70) 35%,
-      rgba(177,18,38,0.18) 62%,
-      rgba(0,0,0,0) 72%
+      rgba(177,18,38,0.45) 42%,
+      rgba(177,18,38,0.15) 62%,
+      transparent 72%
     );
 
   /* Glow + bloom */
@@ -196,20 +195,15 @@ main{
     0 0 40px rgba(177,18,38,0.40),
     0 0 90px rgba(177,18,38,0.25);
 
-  /* The sequence:
-     1) quick flicker (electrical)
-     2) red ignition ramp
-     3) subtle living pulse
-  */
+  /* Sequence: electrical flicker → ignite → living pulse */
   animation:
     furyFlicker 0.55s steps(1,end) 0.20s forwards,
     furyIgnite 1.15s ease-out 0.75s forwards,
-    furyPulse 5.5s ease-in-out 2.1s infinite;
+    furyPulse 6s ease-in-out 2.1s infinite;
 }
 
-/* Left/Right placement */
-.headlights .left{ left: 18%; }
-.headlights .right{ right: 18%; }
+
+
 
 /* Electrical flicker: abrupt on/off + tiny jitters */
 @keyframes furyFlicker{
