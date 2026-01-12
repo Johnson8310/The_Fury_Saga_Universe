@@ -4,6 +4,10 @@ title: The Fury Saga Universe
 ---
 
 <div class="hero">
+  <div class="headlights" aria-hidden="true">
+  <span class="light left"></span>
+  <span class="light right"></span>
+</div>
   <h1>THE FURY SAGA UNIVERSE</h1>
 
   <p><strong>Prophecy can’t change. Evil never dies.</strong></p>
