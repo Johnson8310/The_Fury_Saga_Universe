@@ -138,7 +138,7 @@ main{
       rgba(7,10,15,0.85)
     ),
     url("../images/hero-garage.jpg");
-
+   
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -146,7 +146,20 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
+   
 }
+
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  backdrop-filter: saturate(1.05) contrast(1.05);
+  -webkit-backdrop-filter: saturate(1.05) contrast(1.05);
+}
+
 /* =========================
    Fury Headlights: flicker → red ignite → living glow
    ========================= */
@@ -201,7 +214,14 @@ main{
     furyIgnite 1.15s ease-out 0.75s forwards,
     furyPulse 6s ease-in-out 2.1s infinite;
 }
+/* Horizontal placement — REQUIRED */
+.headlights .light.left{
+  left: 18%;
+}
 
+.headlights .light.right{
+  right: 18%;
+}
 
 
 
